@@ -1,5 +1,6 @@
 package com.test.thymeleafcontroller.model;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -19,6 +20,7 @@ public class Customer {
     @Size(min = 2, max = 4, message = "Customer number should be between 2 to 4 characters.")
     private String number;
 
+    @Email(message = "Email must be valid and authentic.")
     @NotEmpty(message = "Customer email is required.")
     private String email;
 
