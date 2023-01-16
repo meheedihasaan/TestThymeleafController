@@ -20,6 +20,7 @@ public class CustomerController {
 
     private static final List<Customer> CUSTOMERS = new ArrayList<>();
 
+    //To view the customers page
     @GetMapping
     public String getCustomerView(Model model) {
         model.addAttribute("customer", new Customer());
@@ -27,6 +28,7 @@ public class CustomerController {
         return "customers";
     }
 
+    //To create customer
     @PostMapping
     public String createCustomer(@Valid @ModelAttribute Customer customer, BindingResult bindingResult, RedirectAttributes redirectAttributes, Model model) {
         if(bindingResult.hasErrors()){
